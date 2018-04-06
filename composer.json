@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twbs/bootstrap": "^4.0",
+        "minerva-framework/totalvoice-api": "^0.2.0"
+    }
+}
