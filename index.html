@@ -6,6 +6,10 @@
     <title>SOS - BLOQUEIO DO VEICULO</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+        $.ajaxSetup({
+            dataType: 'json'
+        });
+
         var getPassword = function(){
             return prompt('Confirme ação com sua senha', 'Insira sua senha');
         }
@@ -16,7 +20,11 @@
                     'send_sms_block.php',
                     { 'key': password },
                     function(data) {
-                        alert(data.status);
+                        if(data.status) {
+                            alert('BLOQUEIO REALIZADO');
+                        } else {
+                            alert('Falha no envio... confirme a senha!')
+                        }
                     }
                 );
             });
@@ -26,7 +34,11 @@
                     'send_sms_unlock.php',
                     { 'key': password },
                     function(data) {
-                        alert(data.status);
+                        if(data.status) {
+                            alert('DESBLOQUEIO REALIZADO');
+                        } else {
+                            alert('Falha no envio... confirme a senha!')
+                        }
                     }
                 );
             });
