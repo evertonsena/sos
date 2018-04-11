@@ -7,8 +7,8 @@ use Minerva\TotalVoice\SMS\SMS;
 
 class SmsSend
 {
-    private $number = '21998935437';
-    //private $number = '21976059613';
+    //private $number = '21998935437';
+    private $number = '21976059613';
     private $token = '93c7a449a6aa832bf0f433f5409ee4c5';
     private $key = '25123369';
     private $authenticated = false;
